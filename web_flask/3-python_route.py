@@ -5,7 +5,7 @@ Routes:
     /: Displays 'Hello HBNB!'.
     /hbnb: Displays 'HBNB'.
     /c/<text>: Displays 'C' followed by the value of <text>.
-    /python/(<text>): display "Python", followed by the value of the text variable .
+    /python/(<text>): display "Python", followed by the value of the text.
     Uses the option strict_slashes=False in he route definition.
 """
 from flask import Flask
