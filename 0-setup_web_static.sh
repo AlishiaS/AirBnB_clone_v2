@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Preparing a web server on a remote host (ceejay.tech)
+# Preparing a web server on a remote host 
 
 
 # Install Nginx if it's not already installed
