@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Script that starts a Flask web application.
-Web application listening on 0.0.0.0, port 5000.
-Routes:
-    /: Displays 'Hello HBNB!'.
-    /hbnb: Displays 'HBNB'.
-    /c/<text>: Displays 'C' followed by the value of <text>.
-    /python/(<text>): display "Python", followed by the value of the text.
-    /number/<n>: display "n is a number" only iif n is an integer.
-    /number_template/<n>: display a HTML only if n is an integer.
-    Uses the option strict_slashes=False in the route definition.
+"""
+    Script that starts a Flask web application.
+    Web application listening on 0.0.0.0, port 5000.
+    Routes:
+        /: Displays 'Hello HBNB!'.
+        /hbnb: Displays 'HBNB'.
+        /c/<text>: Displays 'C' followed by the value of <text>.
+        /python/(<text>): display "Python", followed by the value of the text.
+        /number/<n>: display "n is a number" only iif n is an integer.
+        /number_template/<n>: display a HTML only if n is an integer.
+        Uses the option strict_slashes=False in the route definition.
 """
 from flask import Flask
 from flask import render_template
@@ -30,9 +31,7 @@ def hbnb():
 
 @app.route("/c/<text>", strict_slashes=False)
 def c(text):
-    """ Displays 'C' followed by the value of <text>
-    Replaces any underscores in <text> with slashes.
-    """
+    """Displays 'C' followed by the value of <text>"""
     text = text.replace("_", " ")
     return "C {}".format(text)
 
@@ -40,9 +39,7 @@ def c(text):
 @app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):
-    """Displays 'Python' followed by the value of <text>
-    Replaces any underscores in <text> with slashes.
-    """
+    """Displays 'Python' followed by the value of <text>"""
     text = text.replace("_", " ")
     return "Python {}".format(text)
 
