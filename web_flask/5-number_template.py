@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-    Script that starts a Flask web application.
-    Web application listening on 0.0.0.0, port 5000.
+"""Script that starts a Flask web application.
+Web application listening on 0.0.0.0, port 5000.
     Routes:
         /: Displays 'Hello HBNB!'.
         /hbnb: Displays 'HBNB'.
@@ -11,6 +10,7 @@
         /number_template/<n>: display a HTML only if n is an integer.
         Uses the option strict_slashes=False in the route definition.
 """
+
 from flask import Flask
 from flask import render_template
 
@@ -25,7 +25,7 @@ def hello_hbnb():
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    """Displays 'HBNB'"""
+    """ Displays 'HBNB' """
     return "HBNB"
 
 
@@ -46,13 +46,13 @@ def python(text="is cool"):
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
-    """Displays 'n is a number' only if <n> is an integer."""
+    """ Displays 'n is a number' only if <n> is an integer. """
     return "{} is a number".format(n)
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
-    """Displays an HTML page only if <n> is an integer."""
+    """ Displays an HTML page only if <n> is an integer. """
     return render_template("5-number.html", n=n)
 
 
